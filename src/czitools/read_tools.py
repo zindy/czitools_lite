@@ -18,8 +18,9 @@ from pathlib import Path
 import dask
 import dask.array as da
 import os
-from tqdm import trange, tqdm
-from tqdm.contrib.itertools import product
+#from tqdm import trange, tqdm
+#from tqdm.contrib.itertools import product
+from itertools import product
 
 
 def read_6darray(filepath: Union[str, os.PathLike[str]],
@@ -140,13 +141,13 @@ def read_6darray(filepath: Union[str, os.PathLike[str]],
             # initialise empty list to hold the dask arrays
             img = []
 
-            for s in trange(size_s):
+            for s in range(size_s):
                 time_stack = []
-                for time in trange(size_t):
+                for time in range(size_t):
                     ch_stack = []
-                    for ch in trange(size_c):
+                    for ch in range(size_c):
                         z_stack = []
-                        for z in trange(size_z):
+                        for z in range(size_z):
                             if mdata.image.SizeS is not None:
 
                                 z_slice = da.from_delayed(
