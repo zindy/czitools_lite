@@ -1054,7 +1054,7 @@ def create_mdict_red(metadata: CziMetadata, sort: bool = True) -> Dict:
                'XScale': metadata.scale.X,
                'YScale': metadata.scale.Y,
                'ZScale': metadata.scale.Z,
-               'ChannelsNames': metadata.channelinfo.names,
+               'ChannelNames': metadata.channelinfo.names,
                'ChannelDyes': metadata.channelinfo.dyes,
                'ChannelColors': metadata.channelinfo.colors,
                'WellArrayNames': metadata.sample.well_array_names,
